@@ -1,0 +1,16 @@
+transition_system tp1_ex2 < width = 0 >;
+0 < property = (P1R, P2V) >  |-
+	0 -> 1 < property = t4 > ;
+1 < property = (P1R, P2O) >  |-
+	1 -> 2 < property = t3 > ;
+2 < property = (P1R, P2R, P2test) >  |-
+	2 -> 3 < property = t2 > ;
+3 < property = (P1V, P2R) >  |-
+	3 -> 4 < property = t1 > ;
+4 < property = (P1O, P2R) >  |-
+	4 -> 5 < property = t0 > ;
+5 < property = (P1R, P1test, P2R) >  |-
+	5 -> 0 < property = t5 > ;
+< initial = { 0 } >.
+
+

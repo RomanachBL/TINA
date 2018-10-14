@@ -1,0 +1,33 @@
+Struct version 3.4.4 -- 01/05/16 -- LAAS/CNRS
+
+parsed net buffer_1
+
+7 places, 6 transitions
+
+net buffer_1
+tr arivee_lecteur readers -> wait_readers 
+tr arrivee_ecrivains writters -> wait_writters 
+tr debut_ecriture lock*5 wait_writters -> writting 
+tr debut_lecture lock wait_readers -> reading 
+tr fin_ecriture writting -> lock*5 writters 
+tr fin_lecture reading -> lock readers 
+pl lock (5)
+pl readers (6)
+pl writters (3)
+
+0.001s
+
+P-SEMI-FLOWS GENERATING SET ------------------------------------- 
+
+invariant
+
+wait_writters writters writting (3)
+lock reading writting*5 (5)
+readers reading wait_readers (6)
+
+0.000s
+
+ANALYSIS COMPLETED  --------------------------------------------- 
+
+
+

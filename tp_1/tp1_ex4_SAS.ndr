@@ -1,0 +1,43 @@
+t 315.0 160.0 Coiffure_direct n 0 w n {} ne
+t 165.0 255.0 Partir_plein w 0 w n {} ne
+p 165.0 160.0 Client_arrive 0 n
+t 285.0 245.0 Go_attente n 0 w n {} ne
+p 285.0 430.0 Salle_attente_occ 0 s
+p 735.0 165.0 Coiffure_en_cours 0 s
+t 870.0 165.0 Fin_coiffure e 0 w n {} ne
+p 530.0 50.0 Coiffeur_libre 1 n
+t 530.0 250.0 Coiffure_attente e 0 w n {} ne
+p 715.0 50.0 {Coiffeur_occupé} 0 n
+p 530.0 430.0 salle_attente_libre 2 s
+t 40.0 160.0 Arrivage s 0 w n {} ne
+p 40.0 55.0 SAS 1 n
+e Coiffure_direct 0.3660966224 88.52683209 SAS 0.01112270261 100.2447006 1 n
+e Go_attente 0.2760597505 116.5589979 SAS 0.9689024683 97.86214794 1 n
+e Partir_plein SAS 1 n
+e SAS Arrivage 1 n
+e Coiffure_attente {Coiffeur_occupé} 1 n
+e Go_attente {Coiffeur_occupé} 1 n
+e {Coiffeur_occupé} Go_attente 1 n
+e {Coiffeur_occupé} Fin_coiffure 1 n
+e Coiffure_direct {Coiffeur_occupé} 1 n
+e Fin_coiffure Coiffeur_libre 1 n
+e Coiffure_en_cours Fin_coiffure 1 n
+e Coiffure_attente salle_attente_libre 1 n
+e Coiffure_attente Coiffure_en_cours 1 n
+e Coiffeur_libre Coiffure_attente 1 n
+e Salle_attente_occ Coiffure_attente 1 n
+e Go_attente Salle_attente_occ 1 n
+e salle_attente_libre Go_attente 1 n
+e Client_arrive Go_attente 1 n
+e Salle_attente_occ Partir_plein 2 w
+e Partir_plein Salle_attente_occ 2 w
+e Client_arrive Partir_plein 1 n
+e Coiffure_direct Coiffure_en_cours 1 n
+e salle_attente_libre Coiffure_direct 2 n
+e Coiffure_direct salle_attente_libre 2 e
+e Coiffeur_libre Coiffure_direct 1 n
+e Client_arrive Coiffure_direct 1 n
+e Arrivage Client_arrive 1 n
+h tp1_ex4_SAS
+
+
